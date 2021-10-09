@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f9ed69;
+}
+
+
+.wrapper {
+  width: 420px;
+  background: #fff;
+  border-radius: 7px;
+  padding: 28px 28px 45px;
+}
+/* Show content when type meaningful word or disappear */
+.wrapper ul {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+.wrapper.active ul {
+  height: 300px;
+  opacity: 1;
+}
+.wrapper.active .info-text{
+  display: none;
+}
+
+
+.wrapper header {
+  font-size: 28px;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Input bar */
+.search {
+  margin: 35px 0 18px;
+  position: relative;
+}
+
+.search input {
+  height: 53px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #999;
+  padding: 0 44px;
+  font-size: 16px;
+}
+
+.search input:focus{
+  padding: 0 43px;
+  border: 2px solid #F08A5D;
+}
+
+.search input::placeholder{
+  color: #b8b8b8;
+}
+
+.search span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+}
+
+.search .search-icon {
+  left: 18px;
+  font-size: 22px;
+  pointer-events: none;
+}
+
+.search input:focus ~ .search-icon {
+  color: #F08A5D;
+}
+
+.search .close-icon {
+  right: 15px;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+
+.search input:valid ~ .close-icon {
+  display: block;
+}
+
+/* Info Text */
+.wrapper .info-text {
+  font-size: 14px;
+  color: #9a9a9a;
+  margin: -3px 0 -10px;
+}
+.wrapper .info-text span {
+  font-weight: 500;
+}
+
+/* Content section */
+.wrapper ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 17px;
+  margin-bottom: 14px;
+}
+ul li:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+ul .content {
+  max-height: 215px;
+  overflow-y: auto;
+}
+ul .content::-webkit-scrollbar{
+  width: 0;
+}
+
+/* Word  */
+ul .word p {
+  font-size: 22px;
+  font-weight: 500;
+}
+.word .details span  {
+  font-size: 12px;
+  color: #989898;
+}
+.word > span {
+  cursor: pointer;
+  color: #999;
+} 
+
+/* Content titles and paragraphs */
+.content li .details p {
+  font-size: 17px;
+  font-weight: 500;
+}
+.content li .details span {
+  font-size: 15px;
+  color: #7e7e7e;
+}
+
+/* Synonyms */
+.synonyms .details .list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.synonyms .details .list span {
+  margin-right: 5px;
+  text-decoration: underline;
+  cursor: pointer;
+}
